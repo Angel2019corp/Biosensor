@@ -3,7 +3,7 @@
 %   start, es el ángulo inicial
 %   stop, es
 
-function result = fresnel(e)
+function result = fresnel1(e)
 format long
 enpr=1.76; %n del vidrio (sólo hay parte real)
 %Oro, 633 nm
