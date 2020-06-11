@@ -9,7 +9,7 @@
 %   lnano, longitud de los nanoros (eje mayor)
 %   fracc, fracción de llenado
 %           El programa  convierte a nm, las dimensiones
-function result = reflect3(ind,dfilm,dpeg,dnano,lnano,fracc)
+function result = fresnel3(ind,dfilm,dpeg,dnano,lnano,fracc)
 
 format long
 lambda = 633e-9;
