@@ -1,15 +1,15 @@
-%% Programa que obtiene la gr醘ica de absorbancia usando la teoria de Mie
+%% Programa que obtiene la gr谩fica de absorbancia usando la teoria de Mie
 %  para ello se utilizan las funciones 
-%  Mie_abcd.m y Mie.m, adem醩 se utilizan los valores de la funci髇 
-%  diel閏trica de las esferas, corregidas nanometricamente 
+%  Mie_abcd.m y Mie.m, adem谩s se utilizan los valores de la funci贸n 
+%  diel茅ctrica de las esferas, corregidas nanometricamente 
 %  propuesto por Kreibig y Vonfragstein (1969), el cual se encuentra en
 %  otro programa llamado correcion, sin embargo para no hacer este
 %  programa muy extenso, solo tomamos los valores calculados por dicho
 %  programa, los cuales se encuentran en un documento excel.
 %%          Valores iniciales
-                                         % Medio anfitri髇
-n_medio = 1.33;                          % 蚽dice de refracci髇
-em= sqrt(n_medio);                       % cte. diel閏trica
+                                         % Medio anfitri贸n
+n_medio = 1.33;                          % 脥ndice de refracci贸n
+em= sqrt(n_medio);                       % cte. diel茅ctrica
                                          % esfera metalica
 filename = 'nombrearchivo.xlsx';        
 lambda = xlsread(filename,'A1:ZY1');     % Lambda
@@ -18,7 +18,7 @@ eIm = xlsread(filename,'A3:ZY3');        % Parte imaginaria funcion dielectrica
                                            
 start=10;   stop=700;                    % Definimos limites
 
-% convertimos a numero complejo la funci髇 diel閏trica de las NPs
+% convertimos a numero complejo la funci贸n diel茅ctrica de las NPs
 epsilon  = eRe(start:stop)+i*eIm(start:stop);
 epsilon2 = eRe2(start:stop)+i*eIm2(start:stop);
                                          % Tomamos valores de interes 
@@ -30,8 +30,8 @@ epsilonc = eRecf(start:stop)+i*eImcf(start:stop);
     
 
 m =sqrt(epsilon)/n_medio;                % Generamos indice relativo
-a=20e-9;x = (2*pi./lam)*a*n_medio;       % Generamos parametro de tama駉 
-%  C醠culo de coeficientes usando programa Mie, para cada valor de lambda
+a=20e-9;x = (2*pi./lam)*a*n_medio;       % Generamos parametro de tama帽o 
+%  C谩lculo de coeficientes usando programa Mie, para cada valor de lambda
 for c=1:lon
     s=Mie(m(c),x(c));
     g(c)=s(3); % tomamos el elemento 3 de la salida 
@@ -47,6 +47,6 @@ ar.LineWidth = 2.5;
 ax = gca;
 ax.XAxis.Exponent = -9;             % exponente en el eje x
 legend({'Leyenda'},'Location','southwest')
-axis([420*10^(-9) 700*10^(-9) 0 4])  %Regi髇 de interes
+axis([420*10^(-9) 700*10^(-9) 0 4])  %Regi贸n de interes
 xlabel('\lambda (nm)','FontSize',15,'FontWeight','bold')
 ylabel('Absorbancia (u.a.)','FontSize',15,'FontWeight','bold')
