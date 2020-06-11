@@ -1,11 +1,11 @@
-% Parámetos de entrada
-%   e, la función dieléctrica del medio a sensar
-%   start, es el ángulo inicial
+% ParÃ¡metos de entrada
+%   e, la funciÃ³n dielÃ©ctrica del medio a sensar
+%   start, es el Ã¡ngulo inicial
 %   stop, es
 
 function result = fresnel(e)
 format long
-enpr=1.76; %n del vidrio (sólo hay parte real)
+enpr=1.76; %n del vidrio (sÃ³lo hay parte real)
 %Oro, 633 nm
 e1n=0.1726; %Parte real de n (oro)
 e1k=3.4218; %Parte imaginaria de n (oro)
@@ -14,17 +14,17 @@ e1i=2*e1n*e1k; %Parte imaginaria de epsilon (oro)
 e1=complex(e1r,e1i); %Epsilon compleja (oro)
 d1=45e-9; %Grosor de la capa de oro (m)
 %Aire
-e2=e; %n del aire (sólo hay parte real)
-%---CONSTANTES Y PARÁMETROS DADOS
+e2=e; %n del aire (sÃ³lo hay parte real)
+%---CONSTANTES Y PARÃMETROS DADOS
 c=2.99792458e8;
 lambda=632.8e-9;
 omega=2*pi/lambda*c;
-%---ESCANEO DE LOS ÁNGULOS Y SOLUCIÓN DE LAS ECUACIONES DE FRESNEL
-ang0=30; %Límite inferior
-ang1=80; %Límite superior
+%---ESCANEO DE LOS ÃNGULOS Y SOLUCIÃ“N DE LAS ECUACIONES DE FRESNEL
+ang0=30; %LÃ­mite inferior
+ang1=80; %LÃ­mite superior
 vals=1000;
 interval=ang1-ang0;
-angmat=ang0:(interval/vals):ang1; %Vector de ángulos primer valor: intervalo/valores:valorfinal
+angmat=ang0:(interval/vals):ang1; %Vector de Ã¡ngulos primer valor: intervalo/valores:valorfinal
 % en este caso el incremento sera 0.0060 grados
 
 for x=1:(length(angmat))  %Para cada elemento de angmat
