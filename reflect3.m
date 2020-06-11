@@ -1,19 +1,21 @@
 % Respuesta de AuNRs considerando la teoria del medio efecctivo de Maxwell
 % Garnet
-% Escrito por 羘gel Ricardo S醤chez Zeferino
+% Escrito por 脕ngel Ricardo S谩nchez Zeferino
 % Valores de entrada
-%  ind , indice de refracci髇 del medio a sensar
-%   dfilm, espesor de la pel韈ula met醠ica principal
-%   dnano, longitud de los nanoros (eje meno)
+%  ind , indice de refracci贸n del medio a sensar
+%   dfilm, espesor de la pel铆cula met谩lica principal 
+%   dpeg,  espesor ditiol             
+%   dnano, longitud de los nanoros (eje menor)
 %   lnano, longitud de los nanoros (eje mayor)
-%   fracc, fracci髇 de llenado
-function result = seis(ind,dfilm,dpeg,dnano,lnano,fracc)
+%   fracc, fracci贸n de llenado
+%           El programa  convierte a nm, las dimensiones
+function result = reflect3(ind,dfilm,dpeg,dnano,lnano,fracc)
 
 format long
 lambda = 633e-9;
 c      = 2*pi/lambda;
 
-% ------ Indices de refracci髇 y espesores medios isotropicos----
+% ------ Indices de refracci贸n y espesores medios isotropicos----
 % medio 0
 n(1) = 1.77;
 k(1) = 0;
@@ -30,7 +32,7 @@ d(3) = dpeg*1e-9;
 n(5) = ind;
 k(5) = 0;
 d(5) = 0;
-%   ---   Conversi髇 a ctes. diel Isotropicos
+%   ---   Conversi贸n a ctes. diel Isotropicos
 e =(n+k).^2;  
 
 
@@ -38,20 +40,20 @@ e =(n+k).^2;
 
 
 
-%---ESCANEO DE LOS 罭GULOS Y SOLUCI覰 DE LAS ECUACIONES DE FRESNEL
-ang0=30; %L韒ite inferior
-ang1=80; %L韒ite superior
+%---ESCANEO DE LOS 脕NGULOS Y SOLUCI脫N DE LAS ECUACIONES DE FRESNEL
+ang0=30; %L铆mite inferior
+ang1=80; %L铆mite superior
 vals=1000;
 interval=ang1-ang0;
-angmat=ang0:(interval/vals):ang1; %Vector de 醤gulos primer valor: intervalo/valores:valorfinal
+angmat=ang0:(interval/vals):ang1; %Vector de 谩ngulos primer valor: intervalo/valores:valorfinal
 % en este caso el incremento sera 0.0060 grados
 %dimensiones nrs
 dnr=dnano*1e-9;
 l=lnano*1e-9;
 r=dnr/l;
 
-%   funci髇 dielectrica efectiva del medio 3
-            % relaci髇 de aspecto
+%   funci贸n dielectrica efectiva del medio 3
+            % relaci贸n de aspecto
 exc = sqrt(1-r^2);    % Excentricidad
 h=(1/(2*exc))*log((1+exc)/(1-exc));
 lz= ((1-exc^2)/exc^2)*(h-1);% factor geometrico lz
@@ -62,7 +64,10 @@ a2=((1-f)*(e(4)-e(2)))./(e(2)+lx*(e(4)-e(2)));
 ex=e(2)*(a2*(1-lx)+1)/(1-a2*lx);
 ey=e(2)*(a2*(1-ly)+1)/(1-a2*ly);
 ez=e(2)*(a2*(1-lz)+1)/(1-a2*lz);
-% conversi髇 de coordenadas
+% ex = 4+.1*i;
+% ey=3+2*i;
+% ez=2+0*i;
+% conversi贸n de coordenadas
 beta =0; 
 exx=ex*cos(beta)^2 + ez*sin(beta)^2;
 exz=(-ex*sin(beta)*cos(beta))+ (ez*sin(beta)*cos(beta));
@@ -70,9 +75,9 @@ ezz=ex*sin(beta)^2 + ez*cos(beta)^2;
 
 
 for x=1:(length(angmat))  %Para cada elemento de angmat
-theta=(ang0+((x-1)*interval)/vals)/180*pi; %realiza la conversion para radianes
+theta1=(ang0+((x-1)*interval)/vals)/180*pi; %realiza la conversion para radianes
 
-
+theta=theta1+(pi*5/180);
 kx=sqrt(e(1))*c*sin(theta);
 
 
