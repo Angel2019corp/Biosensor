@@ -1,7 +1,7 @@
 % Este script permite el calculo y visualizacion de
-% la grafica de absorbancia de particulas elipsoidales
+% la grafica de absorbancia de particulas elipsoidales prolatas
 
-% Expresión a utilizar
+% ExpresiÃ³n a utilizar
 % Las expresiones a utilizar son del trabajo de Gans y Papavassiliou
 
 clear all
@@ -23,7 +23,7 @@ epsi1=real(epsilonau);
 epsi2=imag(epsilonau); %
 
 % % Factores de depolarizacion 
-% % Estos son fijos y estan en función de la excentricidad, por lo tanto se
+% % Estos son fijos y estan en funciÃ³n de la excentricidad, por lo tanto se
 % % calculan al principio del programa
 % % A en nm
 %% relacion de aspecto 1
