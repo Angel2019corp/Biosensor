@@ -2,13 +2,13 @@
 %       4 capas se constituyen por medios isotropicos
 %       1 capa se constituye por un medio anisotropico
 
-%       Se realiza el c醠culo con la formula de Airy
-%       r_{12345} con polarizaci髇 p donde 4 representa
-%       al medio anisotropico biaxial, por lo tanto la reflexi髇 se calcula
-%       acorde a la reflexi髇 de una pel韈ula delgada biaxial, cuya
-%       formualci髇 se encuentra en Fujiwara, 2007.
+%       Se realiza el c谩lculo con la formula de Airy
+%       r_{12345} con polarizaci贸n p donde 4 representa
+%       al medio anisotropico biaxial, por lo tanto la reflexi贸n se calcula
+%       acorde a la reflexi贸n de una pel铆cula delgada biaxial, cuya
+%       formualci贸n se encuentra en Fujiwara, 2007.
 
-%%      Delcaraci髇 de datos
+%%      Delcaraci贸n de datos
 clear all
 %%
 clc
@@ -18,7 +18,7 @@ format long
 % ----- Lambda  ------
 lambda = 633e-9;
 c      = 2*pi/lambda;
-% ------ Indices de refracci髇 y espesores medios isotropicos----
+% ------ Indices de refracci贸n y espesores medios isotropicos----
 % medio 1
 n(1) = 1.77;
 k(1) = 0;
@@ -37,20 +37,20 @@ k(4) = 0;
 d(5) = 0;
 %%
 
-%   ---   Conversi髇 a ctes. diel Isotropicos
+%   ---   Conversi贸n a ctes. diel Isotropicos
 e = (n+k).^2;       
-% ----- 醤gulos ------
-start     = 30; stop = 60; step = 0.01;     % 醤gulos inicial y final en grad., paso 
+% ----- 谩ngulos ------
+start     = 30; stop = 60; step = 0.01;     % 谩ngulos inicial y final en grad., paso 
 theta_i   = start:step:stop;                % intervalo de valores 
-theta_rad = theta_i/180*pi;                 % conversi髇
+theta_rad = theta_i/180*pi;                 % conversi贸n
 theta_p  = (pi/4) +asin(1/n(1)*sin(theta_rad-(pi/4))); % Ley de snell aire/prisma
 
 
-%   ----- indice de refracci髇 pel韈ula biaxial  (solo en eje x y z) variando
+%   ----- indice de refracci贸n pel铆cula biaxial  (solo en eje x y z) variando
 %            acorde a sin ----
-nx   = (2)*(3+cos(theta_p+pi/1.9)/1.9);
+nx   = -1+2i;
 ex   = nx.*nx;
-nz   = (3+3*i)*(1-sin(theta_p+pi/1.01)/1.9);
+nz   = (3+3*i);
 ez   = nz.*nz; 
 d(4) = 40e-9;
 %%
