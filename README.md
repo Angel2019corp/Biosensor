@@ -3,3 +3,5 @@
 
 
 Este repositorio contiene programas que pueden ayudar en el desarrrollo de la modelación de la respuesta óptica de un sensor SPR 
+
+[Contribution guidelines for this project](docs/cincobiaxial.png)
