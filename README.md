@@ -10,10 +10,16 @@ El contenido del repositorio es el siguiente
 
 - Cálculo de la reflectancia para un sistema de 4 capas sustrato/película/AuNRs/ambiente [fresnel2](fresnel2.m) 
 
-- Cálculo de la reflectancia para un sistema de 5 capas sustrato/película/medio dieléctrico/AuNRs/ambiente [fresnel1](fresnel3.m) 
+- Cálculo de la reflectancia para un sistema de 5 capas sustrato/película/medio dieléctrico/AuNRs/ambiente [fresnel3](fresnel3.m) 
 
 - Cálculo de coeficientes de Mie [Mie_abcd](Mie_abcd.m) 
 
 - Cálculo de eficiencias [Mie](Mie.m) 
 
-- Cálculo de curva de absorbancia [absorbancia1](absorbancia1.m) 
+- Cálculo de curva de absorbancia AuNPs [absorbancia1](absorbancia1.m) 
+
+
+- Cálculo de curva de absorbancia AuNRs [absorbancia2](absorbancia2.m) 
+
+
+- Correción de función dieléctrica del oro para NPs [correcionnanometrica](correcionnanometrica.m) 
