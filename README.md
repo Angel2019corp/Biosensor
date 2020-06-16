@@ -27,6 +27,6 @@ El contenido del repositorio es el siguiente
 
 
 
-A modo de resultado, se muestra una imagen de la simulación con el programa ![Screenshot](cincocbiaxial.png)
+A modo de resultado, se muestra una imagen de la simulación con el programa  [fresnel3](fresnel3.m) ![sensor cinco capas](cincocbiaxial.png)
 
 
