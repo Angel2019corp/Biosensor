@@ -23,3 +23,10 @@ El contenido del repositorio es el siguiente
 
 
 - Correción de función dieléctrica del oro para NPs [correcionnanometrica](correcionnanometrica.m) 
+
+
+
+
+A modo de resultado, se muestra una imagen de la simulación con el programa ![Screenshot](cincocbiaxial.png)
+
+
